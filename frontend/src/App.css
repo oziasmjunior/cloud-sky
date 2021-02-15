@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+:root{
+    --white: rgb(255,255,255);
+    --black: #323130;
+    --darkblue: rgb(8,60,120);
+    --blue: #0078d4;
+    --green: rgb(16,124,16);
+    --orange: rgb(252,72,2);
+    --red: rgb(153,1,0);
+}
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Ubuntu';
+    box-sizing: border-box;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+#root{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.asideSYS{
+    width: 250px;
+    height: calc(100% - 64px);
+    background:var(--black);
+    color: var(--white);
+    transition-property: width;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+    z-index: 1000;
+}
+
+.mainSYS{
+    width: 100%;
+    height: calc(100% - 64px);
+    transition-property: width;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+}
+
+.asideSYS + .mainSYS, .asideSYS + .mainSYS * .floatingSYS {
+    width: calc(100vw - 250px);
+}
+
+.asideSYS, .mainSYS {
+    overflow:auto;
+}
+
+.asideSYS * svg, .asideSYS * i {
+    vertical-align: sub;
+    font-size: 24px;
+}
+.asideSYS * svg, .asideSYS * i:hover {
+    color: var(--blue);
+}
+
+/* Menu Fechado */
+.asideSYS.close{
+    width:48px !important;
+}
+
+.asideSYS.close + .mainSYS, .asideSYS.close + .mainSYS * .floatingSYS {
+    width: calc(100vw - 48px);
+}
+
+.asideSYS.close * .MenuText{
+    display: none;
+}
+
+/* Caixa Flutuante */
+.asideSYS + .mainSYS * .floatingSYS {
+    height: 100vh;
+    position: absolute;
+    background: #0000008A;
+    z-index: 100;
+}
+.asideSYS + .mainSYS * .floatingSYS.close {
+    display: none;
+}
