@@ -2,14 +2,18 @@ const mysql2 = require('mysql2/promise');
 
 async function mysql(sql, credentials) {
     let connection, data, result;
+    const dbSocketPath = process.env.DB_SOCKET_PATH || '/cloudsql';
 
     try {
-        connection = mysql2.createPool({
-            host: credentials.conn.host,
+        let info = {
             user: credentials.user,
             password: credentials.pass,
-            database: credentials.conn.database
-        });
+            database: credentials.conn.database,
+        }
+
+        credentials.conn.host === undefined ? info['socketPath'] = credentials.conn.socketPath : info['host'] = credentials.conn.host;
+
+        connection = mysql2.createPool(info);
 
         data = await connection.execute(sql);
     } catch (error) {

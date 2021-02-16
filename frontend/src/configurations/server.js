@@ -1,5 +1,5 @@
 const serverConfig = {
-    url: "http://localhost:8742/"
+    url: "https://api.cloudsky.app/"
 };
 
 export default serverConfig;

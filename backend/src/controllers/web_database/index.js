@@ -2,10 +2,10 @@ const Database = require('../../service/database/mysql');
 
 const connections = {
     "Open-Base": {
-        user: "root",
-        pass: "23800#Malibu",
+        user: process.env.MYSQL_USER,
+        pass: process.env.MYSQL_PASS,
         conn: {
-            host: "34.68.90.239",
+            socketPath: `${process.env.DB_SOCKET_PATH || '/cloudsql'}/${process.env.MYSQL_HOST}`,
             database: "public_database"
         }
     }
