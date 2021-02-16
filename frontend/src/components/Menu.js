@@ -12,7 +12,6 @@ export default class MenuComponent extends Component {
       userInfo: {},
       listLink: [
         { title: 'HOME', link: '/', icon: <Icon iconName="Home" /> },
-        { title: 'SOAP', link: '/soap', icon: <Icon iconName="Send" /> },
         { title: 'SQL', link: '/sql', icon: <Icon iconName="Database" /> }
       ],
     }

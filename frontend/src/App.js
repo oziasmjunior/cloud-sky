@@ -8,6 +8,7 @@ import MenuComponent from './components/Menu';
 
 import HomeView from './views/Home';
 import SQLView from './views/OnlineSQL';
+// import SQLView from './views/SQLView/ConnectDB';
 
 import { initializeIcons } from '@fluentui/react/lib/Icons';
 initializeIcons('https://static2.sharepointonline.com/files/fabric/assets/icons/');

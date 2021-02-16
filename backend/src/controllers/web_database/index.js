@@ -1,7 +1,14 @@
 const Database = require('../../service/database/mysql');
 
 const connections = {
-
+    "Open-Base": {
+        user: "root",
+        pass: "23800#Malibu",
+        conn: {
+            host: "34.68.90.239",
+            database: "public_database"
+        }
+    }
 }
 
 async function DatabaseController(req, res) {
