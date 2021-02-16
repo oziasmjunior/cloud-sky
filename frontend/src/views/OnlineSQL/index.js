@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SPOC_API from '../../services/spoc_api'
+import CloudSkyApi from '../../services/cloudsky_api'
 
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { Dropdown, DropdownMenuItemType } from 'office-ui-fabric-react/lib/Dropdown';
@@ -83,7 +83,7 @@ function SQLView() {
         setSqlBodyResult([]);
         setStatus("Consultando...")
 
-        SPOC_API('post', '/database', data)
+        CloudSkyApi('post', '/database', data)
             .then(value => {
                 if (value.data.code === undefined) {
                     setSqlHeadResult(value.data.head)

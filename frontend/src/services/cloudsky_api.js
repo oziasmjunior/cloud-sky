@@ -2,7 +2,6 @@ import Axios from 'axios';
 import serverConfig from '../configurations/server';
 
 async function SPOC_API(method, url, data = {}) {
-    let headers = { 'Authorization': `Bearer Desativado` };
     const baseURL = serverConfig.url
 
     if (method === undefined)
@@ -13,7 +12,7 @@ async function SPOC_API(method, url, data = {}) {
 
     method = method.toLowerCase();
 
-    return await Axios({ method, url, baseURL, data, headers })
+    return await Axios({ method, url, baseURL, data })
         .then(
             async (res) => {
                 return res
